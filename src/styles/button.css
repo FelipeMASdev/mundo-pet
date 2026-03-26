@@ -1,0 +1,20 @@
+button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding-inline: 1.5rem;
+  padding-block: 0.75rem;
+  border-radius: 0.5rem;
+
+  background-color: var(--background-brand);
+  color: var(--content-dark);
+  text-transform: uppercase;
+
+  border: none;
+}
+
+button:hover, button:focus {
+  background-color: var(--background-highlights);
+  outline: none;
+}

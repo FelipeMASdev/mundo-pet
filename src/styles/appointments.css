@@ -1,0 +1,9 @@
+#appointments {
+  max-width: 55rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  margin-inline: auto;
+}

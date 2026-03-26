@@ -1,0 +1,83 @@
+:root {
+  color-scheme: dark;
+  font-family: "Inter", sans-serif;
+
+  /* content */
+  --content-primary: #ffffff;
+  --content-secondary: #98959d;
+  --content-tertiary: #666666;
+  --content-dark: #050505;
+  --content-brand: #9282fa;
+
+  /* Background */
+  --background-primary: #151515;
+  --background-secondary: #1e1e1e;
+  --background-tertiary: #23242c;
+  --background-brand: #9282fa;
+  --background-highlights: #bdb4fa;
+
+  /* Borders */
+  --border-primary: #3e3c41;
+  --border-secondary: #86818c;
+  --border-brand: #9282fa;
+  --border-divisor: #353339;
+
+  /* Accent/feedback */
+  --accent-blue: #027df0;
+  --accent-blue-light: #16487a;
+  --accent-yellow: #f0dc02;
+  --accent-yellow-light: #756e1b;
+  --accent-orange: #f09102;
+  --accent-orange-light: #75501b;
+
+  /* Fonts */
+  --font-family-inter-tight: "Inter Tight", sans-serif;
+  --font-family-inter: "Inter", sans-serif;
+
+  --font-title: 700 1.5rem/2rem var(--font-family-inter-tight);
+  --font-paragraph-md: 500 0.875rem/1.5rem var(--font-family-inter);
+  --font-paragraph-sm: 500 0.75rem/1rem var(--font-family-inter);
+  --font-label-lg: 700 1rem/1.5rem var(--font-family-inter);
+  --font-label-md: 700 0.875rem/1.5rem var(--font-family-inter);
+  --font-label-sm: 700 0.75rem/1rem var(--font-family-inter);
+  --font-link: 500 0.75rem/1rem var(--font-family-inter);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #1a1a1a;
+  color: #f7f7f7;
+  font: var(--font-paragraph-md);
+}
+
+.container {
+  max-width: 90rem;
+  min-height: 100vh;
+  margin-inline: auto;
+  padding-inline: 3rem;
+
+  position: relative;
+  display: flex;
+  gap: 0.5rem;
+  text-align: center;
+
+  border: 0.0625rem solid red;
+}
+
+#logo {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#new-appointment {
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+}
+

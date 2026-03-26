@@ -1,0 +1,11 @@
+#logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding-inline: 1.25rem;
+  padding-block: 0.75rem;
+  border-bottom-right-radius: 1rem;
+
+  background-color: #2E2C30;
+}
