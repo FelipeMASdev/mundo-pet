@@ -1,9 +1,87 @@
 #appointments {
   max-width: 55rem;
+  width: 100%;
+  padding-top: 4.25rem;
 
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
 
   margin-inline: auto;
+}
+
+#appointments > header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-direction: column;
+  width: 100%;
+}
+
+#appointments header .title {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+#appointments header h1 {
+  font: var(--font-title);
+  color: var(--content-primary);
+}
+
+#appointments header p {
+  font: var(--font-paragraph-md);
+  color: var(--content-secondary);
+}
+
+.periods {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+.periods .card{
+  width: 100%;
+  border-radius: 0.75rem;
+  background-color: var(--background-tertiary);
+
+  min-height: 6rem;
+}
+
+.appointment-list {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.appointment-list header{
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  gap: 0.75rem;
+  padding-inline: 1.5rem;
+  padding-block: 0.75rem;
+  border-bottom: 1px solid var(--border-primary);
+}
+
+.appointment-list header h2 {
+  width: 100%;
+  font: var(--font-label-lg);
+  color: var(--content-primary);
+}
+
+.appointment-list header span {
+  margin-left: auto;
+  font: var(--font-label-lg);
+  color: var(--content-secondary);
+}
+
+
+@media (width > 768px) {
+  #appointments > header {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
 }

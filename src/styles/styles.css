@@ -64,9 +64,6 @@ body {
   position: relative;
   display: flex;
   gap: 0.5rem;
-  text-align: center;
-
-  border: 0.0625rem solid red;
 }
 
 #logo {

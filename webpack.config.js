@@ -43,6 +43,7 @@ module.exports = {
       directory: path.resolve(__dirname, 'src/assets')
     },
     port: 3000,
+    watchFiles: ["src/*.html", "src/styles/*.css"],
     open: true,
     hot: true
   },

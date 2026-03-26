@@ -5,6 +5,7 @@ import './styles/appointments.css';
 
 import './styles/logo.css';
 import './styles/button.css';
+import './styles/input.css';
 
 // lib imports
 import './libs/dayjs';
