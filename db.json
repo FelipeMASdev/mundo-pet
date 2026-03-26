@@ -4,40 +4,35 @@
       "id": 1,
       "pet": "Luna",
       "tutor": "Carla Souza",
-      "when": "2026-03-27",
-      "time": "09:00",
+      "when": "2026-03-26T09:00:00-03:00",
       "service": "vacinação"
     },
     {
       "id": 2,
       "pet": "Thor",
       "tutor": "Marcos Lima",
-      "when": "2026-03-27",
-      "time": "10:30",
+      "when": "2026-03-26T13:00:00-03:00",
       "service": "corte de unhas"
     },
     {
       "id": 3,
       "pet": "Mel",
       "tutor": "Fernanda Alves",
-      "when": "2026-03-28",
-      "time": "11:15",
+      "when": "2026-03-26T15:00:00-03:00",
       "service": "aplicação de anti-pulgas"
     },
     {
       "id": 4,
       "pet": "Bob",
       "tutor": "Rafael Costa",
-      "when": "2026-03-28",
-      "time": "14:00",
+      "when": "2026-03-26T19:00:00-03:00",
       "service": "Tosa higiênica"
     },
     {
       "id": 5,
       "pet": "Nina",
       "tutor": "Patricia Mendes",
-      "when": "2026-03-29",
-      "time": "16:45",
+      "when": "2026-03-26T20:00:00-03:00",
       "service": "limpeza de dentes"
     }
   ]
