@@ -10,5 +10,5 @@ import './styles/input.css';
 import './libs/dayjs';
 
 //js imports
-import './modules/page-load.js';
-import './modules/appointments/show-appointments.js';
+import './modules/events/page-load.js';
+import './modules/events/date-change.js';

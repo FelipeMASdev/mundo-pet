@@ -31,9 +31,23 @@
     {
       "id": 5,
       "pet": "Nina",
-      "tutor": "Patricia Mendes",
+      "tutor": "Patricia Silva",
       "when": "2026-03-26T20:00:00-03:00",
       "service": "limpeza de dentes"
+    },
+    {
+      "id": 6,
+      "pet": "Shiro",
+      "tutor": "Felipe Mendes",
+      "when": "2026-03-27T20:00:00-03:00",
+      "service": "limpeza de dentes"
+    },
+    {
+      "id": 7,
+      "pet": "Shiro",
+      "tutor": "Felipe Mendes",
+      "when": "2026-03-28T18:00:00-03:00",
+      "service": "Tosa higiênica"
     }
   ]
 }

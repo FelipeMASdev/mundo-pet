@@ -7,6 +7,8 @@ const periodNight = document.querySelector('.appointment-list.period-night');
 
 export async function showAppointments({ date }) {
   // calling function to get selected date's appointments from server
+  clearRenderedAppointments();
+
   const schedule = await getAppointments({ date });
 
   const scheduleMorning = schedule.filter((schedule) => 
@@ -35,4 +37,9 @@ function renderAppointment(schedule, appointmentList) {
     <p class="appointment-service">${schedule.service}</p>
   `;
   appointmentList.appendChild(appointmentItem);
+}
+
+function clearRenderedAppointments() {
+  const renderedAppointments = document.querySelectorAll('.appointment-item');
+  renderedAppointments.forEach(appointment => appointment.remove());
 }
