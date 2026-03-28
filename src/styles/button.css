@@ -2,6 +2,7 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
+  width: max-content;
 
   padding-inline: 1.5rem;
   padding-block: 0.75rem;
