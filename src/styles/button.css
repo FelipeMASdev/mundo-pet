@@ -19,3 +19,18 @@ button:hover, button:focus {
   background-color: var(--background-highlights);
   outline: none;
 }
+
+.close-button {
+  position: absolute;
+  top: .25rem;
+  right: .25rem;
+
+  width: 2.5rem;
+  height: 2.5rem;
+
+}
+
+.close-button:hover, .close-button:focus {
+  filter: brightness(1.4);
+  outline: none;
+}

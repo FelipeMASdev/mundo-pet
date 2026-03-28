@@ -10,11 +10,15 @@
   background-color: var(--background-primary);
 }
 
-input{
+input, select{
   border: none;
   outline: none;
   background-color: transparent;
   width: 100%;
+}
+
+select:has([value="placeholder"]:checked) {
+  color: var(--content-secondary);
 }
 
 input[type="date"]::-webkit-calendar-picker-indicator {

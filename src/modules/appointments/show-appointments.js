@@ -29,7 +29,6 @@ function renderAppointment(schedule, appointmentList) {
   appointmentItem.classList.add('appointment-item');
   appointmentItem.setAttribute('data-id', schedule.id);
 
-  console.log(schedule);
   appointmentItem.innerHTML = `
     <p class="appointment-time">${dayjs(schedule.when).format('HH:mm')}</p>
     <p class="appointment-pet">${schedule.pet}</p>

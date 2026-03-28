@@ -10,6 +10,7 @@
   </head>
   <body>
     <main id="app">
+      <div class="blurFilter disabled"></div>
       <div class="container">
         <section id="logo">
           <img src="./assets/logo.svg" alt="Mundo Pet" />
@@ -61,12 +62,110 @@
             </li>
 
           </ul>
+
+          <section id="appointment-form" class="disabled">
+            <img class="close-button" src="assets/cancel.svg" alt="Fechar">
+            <header>
+              <h1>Agende um atendimento</h1>
+              <p>Preencha os dados do cliente para realizar o agendamento:</p>
+            </header>
+
+            <form>
+
+              <div class="input-wrapper">
+                <label for="tutor" class="label">Nome do tutor</label>
+                <div class="input">
+                  <img src="./assets/user.svg" alt="icone de usuario" />
+                  <input 
+                    type="text" id="tutor" name="tutor" 
+                    placeholder="Digite o nome do tutor" required
+                  />
+                </div>
+              </div>
+
+              <div class="input-wrapper">
+                <label for="pet" class="label">Nome do pet</label>
+                <div class="input">
+                  <img src="./assets/paw.svg" alt="icone de pata" />
+                  <input 
+                    type="text" id="pet" name="pet" 
+                    placeholder="Digite o nome do pet" required
+                  />
+                </div>
+              </div>
+
+              <div class="input-wrapper">
+                <label for="telphone" class="label">Telefone</label>
+                <div class="input">
+                  <img src="./assets/phone.svg" alt="icone de Telefone" />
+                  <input 
+                    type="tel" id="telphone" name="telphone" 
+                    placeholder="(00) 0 0000-0000" required
+                  />
+                </div>
+              </div>
+
+              <div class="input-wrapper">
+                <label for="service" class="label">Serviço</label>
+                <div class="input">
+                  <img src="./assets/service.svg" alt="icone de pata" />
+                  <select 
+                    type="text" id="service" name="service" 
+                    required
+                  >
+                    <option value="placeholder" disabled selected>Selecione um serviço</option>
+                    <option value="hair-cut">Tosa Higiênica</option>
+                    <option value="nail-trim">Corte de Unhas</option>
+                    <option value="dental-cleaning">Limpeza de Dentes</option>
+                    <option value="flea-control">Aplicação de Anti-pulgas</option>
+                    <option value="vaccination">Vacinação</option>
+                  </select>
+                  <img src="assets/arrow.svg" alt="">
+                </div>
+              </div>
+
+              <div class="when-wrapper">
+                <div class="input-wrapper">
+                  <label for="date" class="label">Data</label>
+                  <div class="input">
+                    <img src="assets/calendar.svg" alt="">
+                    <input 
+                      type="date" id="date" name="date" 
+                      required
+                    >
+                    <img src="assets/arrow.svg" alt="">
+                  </div>
+                </div>
+  
+                <div class="input-wrapper">
+                  <label for="time" class="label">Hora</label>
+                  <div class="input">
+                    <img src="./assets/clock.svg" alt="icone de pata" />
+                    <select 
+                      type="text" id="time" name="time" 
+                      required
+                    >
+                      <option value="09:00">09:00</option>
+                      <option value="10:00">10:00</option>
+                      <option value="11:00">11:00</option>
+                      <option value="13:00">13:00</option>
+                      <option value="14:00">14:00</option>
+                    </select>
+                    <img src="assets/arrow.svg" alt="">
+                  </div>
+                </div>
+              </div>
+
+              <button type="submit">Agendar</button>
+
+            </form>
+
+          </section>
         </section>
 
         <section id="new-appointment">
-          <button>Novo agendamento</button>
+          <button class="new-appointment-button">Novo agendamento</button>
         </section>
-
         
       </div>
     </main>

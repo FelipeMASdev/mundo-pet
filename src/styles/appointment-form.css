@@ -1,0 +1,58 @@
+#appointment-form {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+
+  background-color: var(--background-tertiary);
+  border-radius: 0.75rem;
+  border: 1px solid var(--border-primary);
+  padding: 2.5rem;
+
+  width: 120%;
+  max-width: max-content;
+  z-index: 2;
+}
+
+#appointment-form header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-bottom: 1.75rem;
+}
+
+#appointment-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+#appointment-form button {
+  margin-left: auto;
+  margin-top: 0.75rem;
+}
+
+#appointment-form .input-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: .25rem;
+} 
+
+.when-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+  width: 100%;
+}
+
+label {
+  font: var(--font-label-md);
+  color: var(--content-primary);
+}
+
+@media (width > 768px) {
+  .when-wrapper {
+    flex-direction: row;
+  }
+}
