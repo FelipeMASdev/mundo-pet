@@ -1,6 +1,6 @@
 let formToggle = false;
 
-const appointmentForm = document.querySelector('#appointment-form');
+const appointmentForm = document.querySelector('#appointment-add');
 const blurFilter = document.querySelector('.blurFilter');
 
 const newAppointmentButton = document.querySelector('.new-appointment-button');

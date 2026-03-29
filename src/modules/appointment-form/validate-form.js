@@ -2,7 +2,7 @@ import dayjs from "dayjs";
 import { getAppointments } from '../../services/get-appointments.js';
 import { addOpeningHours, clearOpeningHours} from '../appointment-form/set-opening-hours.js';
 
-const form = document.querySelector('#appointment-form');
+const form = document.querySelector('#appointment-add');
 
 const telephoneInput = form.querySelector('input[name="telephone"]');
 const dateInput = form.querySelector('input[name="date"]');
@@ -87,16 +87,10 @@ export async function validateHour() {
       available = true;
     }
 
-
-    let valid;
-
     if (isNotHourInPast && available) {
-      valid = true;
-      console.log(`Hora ${option.value} está disponível para agendamento.`);
+      return;
     } else {
-      valid = false;
       const hourOption = document.querySelector(`#time option[value="${option.value}"]`);
-      console.log(`Hora ${option.value} não está disponível para agendamento.`);
       hourOption.remove();
     }
   });

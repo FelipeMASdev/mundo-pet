@@ -1,4 +1,4 @@
-#appointment-form {
+#appointment-add {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
@@ -13,25 +13,25 @@
   z-index: 2;
 }
 
-#appointment-form header {
+#appointment-add header {
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
   margin-bottom: 1.75rem;
 }
 
-#appointment-form form {
+#appointment-add form {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
 
-#appointment-form button {
+#appointment-add button {
   margin-left: auto;
   margin-top: 0.75rem;
 }
 
-#appointment-form .input-wrapper {
+#appointment-add .input-wrapper {
   width: 100%;
   display: flex;
   flex-direction: column;

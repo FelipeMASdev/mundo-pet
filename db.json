@@ -1,53 +1,45 @@
 {
   "appointments": [
     {
-      "id": 1,
-      "pet": "Luna",
-      "tutor": "Carla Souza",
-      "when": "2026-03-30T09:00:00-03:00",
-      "service": "vacinação"
+      "id": "2VzPJ1_Dfrk",
+      "pet": "Fred",
+      "tutor": "Felipe",
+      "telephone": "(13) 9 8877-6655",
+      "service": "Tosa Higiênica",
+      "when": "2026-03-30T10:30:00"
     },
     {
-      "id": 2,
-      "pet": "Thor",
-      "tutor": "Marcos Lima",
-      "when": "2026-03-30T13:00:00-03:00",
-      "service": "corte de unhas"
+      "id": "Z_RjjdyNg7w",
+      "pet": "Fred",
+      "tutor": "Felipe",
+      "telephone": "(13) 9 8877-6655",
+      "service": "Corte de Unhas",
+      "when": "2026-03-30T11:00:00"
     },
     {
-      "id": 3,
-      "pet": "Mel",
-      "tutor": "Fernanda Alves",
-      "when": "2026-03-30T15:00:00-03:00",
-      "service": "aplicação de anti-pulgas"
-    },
-    {
-      "id": 4,
-      "pet": "Bob",
-      "tutor": "Rafael Costa",
-      "when": "2026-03-30T19:00:00-03:00",
-      "service": "Tosa higiênica"
-    },
-    {
-      "id": 5,
-      "pet": "Nina",
-      "tutor": "Patricia Silva",
-      "when": "2026-03-30T20:00:00-03:00",
-      "service": "limpeza de dentes"
-    },
-    {
-      "id": 6,
+      "id": "aqAtNowMR6w",
       "pet": "Shiro",
-      "tutor": "Felipe Mendes",
-      "when": "2026-03-31T20:00:00-03:00",
-      "service": "limpeza de dentes"
+      "tutor": "Felipe",
+      "telephone": "(13) 9 8877-6655",
+      "service": "Limpeza de Dentes",
+      "when": "2026-03-30T14:00:00"
     },
     {
-      "id": 7,
+      "id": "sVhInwCUMKQ",
       "pet": "Shiro",
-      "tutor": "Felipe Mendes",
-      "when": "2026-03-31T18:00:00-03:00",
-      "service": "Tosa higiênica"
+      "tutor": "Felipe",
+      "telephone": "(13) 9 8877-6655",
+      "service": "Aplicação de Anti-pulgas",
+      "when": "2026-03-30T14:30:00"
+    },
+    {
+      "id": "fNAVnDDTGk4",
+      "pet": "Jully",
+      "tutor": "Fernanda",
+      "telephone": "(13) 9 8877-6655",
+      "service": "Vacinação",
+      "when": "2026-03-30T21:00:00"
     }
-  ]
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }
