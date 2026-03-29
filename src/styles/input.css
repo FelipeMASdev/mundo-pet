@@ -17,7 +17,7 @@ input, select{
   width: 100%;
 }
 
-select:has([value="placeholder"]:checked) {
+select:has([value=""]:checked) {
   color: var(--content-secondary);
 }
 

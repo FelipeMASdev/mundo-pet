@@ -16,3 +16,4 @@ import './modules/events/page-load.js';
 import './modules/events/date-change.js';
 import './modules/events/form-open.js';
 import './modules/events/form-close.js';
+import './modules/appointment-form/validate-form.js';

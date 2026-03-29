@@ -1,0 +1,102 @@
+import dayjs from "dayjs";
+import { getAppointments } from '../../services/get-appointments.js';
+
+const form = document.querySelector('#appointment-form');
+
+const telephoneInput = form.querySelector('input[name="telephone"]');
+const dateInput = form.querySelector('input[name="date"]');
+const hourInput = form.querySelector('select[name="time"]');
+
+const today = dayjs(new Date()).format('YYYY-MM-DD');
+dateInput.value = today;
+dateInput.min = today;
+validateHour();
+
+async function getAppointmentData(){
+  const data = await getAppointments({ date: dateInput.value });
+  return data;
+}
+
+telephoneInput.addEventListener("input", (event) => {
+  validateTelephone(event.target.value);
+});
+
+function validateTelephone(telephone) {
+  telephone = telephone.replace(/\D/g, '');
+  telephone = telephone.replace(/^(\d{11}).*/, '$1');
+  telephone = telephone.replace(/^(\d{2})/, '($1)');
+  telephone = telephone.replace(/(\d{4,5})(\d{4})/, ' $1-$2');  
+
+  let regex5D = telephone.match(/(\d{5})/g);
+  if (regex5D) {
+    regex5D[0] = regex5D[0].replace(/(\d)(\d{4})/, '$1 $2');
+    telephone = telephone.replace(/(\d{5})/, regex5D[0]);
+  }
+
+  telephoneInput.value = telephone;
+}
+
+dateInput.addEventListener("input", (event) => {
+  validateDate(event.target.value);
+});
+
+function validateDate(date) {
+  const dayOfWeek = dayjs(date).day();
+  if (dayOfWeek === 0) {
+    dateInput.value = today;
+    alert("Não abrimos aos domingos. Por favor, escolha outra data.");
+  } else {
+    validateHour();
+  }
+  dateInput.min = today;
+}
+
+async function validateHour() {
+  //deestructuring options of the hour select input and storing it in an array
+  const options = [...hourInput.options];
+  
+  //getting appointments data for the selected date from server
+  const appoinstments = await getAppointmentData();
+  let appointmentsTime = [];
+
+  //creating a array of hours that already have an appointment
+  appoinstments.forEach(appointment => {
+    let appointmentTime = dayjs(appointment.when).format('H:mm');
+    //regex to add zero in hours with only one digit
+    if(appointmentTime.length === 4){
+      appointmentTime = '0' + appointmentTime;
+    }
+    appointmentsTime.push(appointmentTime);
+  });
+
+  //iterating over the options of the hour select input to check if they are valid for scheduling
+  options.forEach( option => {
+    //checking if the hour is in the past
+    const selectedTime = option.value.split(':');
+    const fulldate = dayjs(dateInput.value).set('hour', selectedTime[0]).set('minute', selectedTime[1]);
+    const isNotHourInPast = fulldate.isAfter(dayjs()); 
+
+    let available;
+    
+    //chegking if the hour already has an appointment
+    if(appointmentsTime.includes(option.value)){
+      available = false;
+    }else {
+      available = true;
+    }
+
+
+    let valid;
+
+    if (isNotHourInPast && available) {
+      valid = true;
+      console.log(`Hora ${option.value} está disponível para agendamento.`);
+    } else {
+      valid = false;
+      const hourOption = document.querySelector(`#time option[value="${option.value}"]`);
+      console.log(`Hora ${option.value} não está disponível para agendamento.`);
+      hourOption.remove();
+    }
+  });
+
+}
