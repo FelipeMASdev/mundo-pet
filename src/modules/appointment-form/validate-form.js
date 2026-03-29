@@ -1,5 +1,6 @@
 import dayjs from "dayjs";
 import { getAppointments } from '../../services/get-appointments.js';
+import { addOpeningHours, clearOpeningHours} from '../appointment-form/set-opening-hours.js';
 
 const form = document.querySelector('#appointment-form');
 
@@ -8,7 +9,6 @@ const dateInput = form.querySelector('input[name="date"]');
 const hourInput = form.querySelector('select[name="time"]');
 
 const today = dayjs(new Date()).format('YYYY-MM-DD');
-dateInput.value = today;
 dateInput.min = today;
 validateHour();
 
@@ -46,12 +46,14 @@ function validateDate(date) {
     dateInput.value = today;
     alert("Não abrimos aos domingos. Por favor, escolha outra data.");
   } else {
+    clearOpeningHours(hourInput);
+    addOpeningHours(hourInput);
     validateHour();
   }
   dateInput.min = today;
 }
 
-async function validateHour() {
+export async function validateHour() {
   //deestructuring options of the hour select input and storing it in an array
   const options = [...hourInput.options];
   
