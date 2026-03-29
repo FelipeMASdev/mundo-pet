@@ -6,11 +6,15 @@ const periodAfternoon = document.querySelector('.appointment-list.period-afterno
 const periodNight = document.querySelector('.appointment-list.period-night');
 
 export async function showAppointments({ date }) {
-  // calling function to get selected date's appointments from server
+ 
+  
+  //clering previously rendered appointments to avoid duplicates
   clearRenderedAppointments();
 
+   // calling function to get selected date's appointments from server
   const schedule = await getAppointments({ date });
 
+  // filtering appointments by period of day
   const scheduleMorning = schedule.filter((schedule) => 
     dayjs(schedule.when).hour() < 12);
   const scheduleAfternoon = schedule.filter((schedule) => 
@@ -18,6 +22,7 @@ export async function showAppointments({ date }) {
   const scheduleNight = schedule.filter((schedule) => 
     dayjs(schedule.when).hour() >= 18);
 
+  //rendering appointments in the respective period of day
   scheduleMorning.forEach((schedule) => renderAppointment(schedule, periodMorning));
   scheduleAfternoon.forEach((schedule) => renderAppointment(schedule, periodAfternoon));
   scheduleNight.forEach((schedule) => renderAppointment(schedule, periodNight));
@@ -30,10 +35,14 @@ function renderAppointment(schedule, appointmentList) {
   appointmentItem.setAttribute('data-id', schedule.id);
 
   appointmentItem.innerHTML = `
-    <p class="appointment-time">${dayjs(schedule.when).format('HH:mm')}</p>
-    <p class="appointment-pet">${schedule.pet}</p>
-    <p class="appointment-tutor">${schedule.tutor}</p>
-    <p class="appointment-service">${schedule.service}</p>
+    <div class="appointment-info">
+      <p class="appointment-time">${dayjs(schedule.when).format('HH:mm')}</p>
+      <p class="appointment-pet">${schedule.pet}</p>
+      <p class="appointment-tutor">${schedule.tutor}</p>
+      <p class="appointment-telephone">${schedule.telephone}</p>
+      <p class="appointment-service">${schedule.service}</p>
+    </div>
+    <img class="cancel-button" src="assets/cancel.svg" alt="cancelar">
   `;
   appointmentList.appendChild(appointmentItem);
 }

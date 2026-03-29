@@ -56,7 +56,7 @@
   display: flex;
   flex-direction: column;
   list-style: none;
-  gap: 0.75rem;
+  gap: 0.25rem;
 }
 
 .appointment-list header{
@@ -81,6 +81,35 @@
   color: var(--content-secondary);
 }
 
+.appointment-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-block: 0.25rem;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+  align-items: center;
+  border-bottom: 1px solid var(--border-divisor);
+}
+
+.appointment-info {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  column-gap: 4rem;
+  row-gap: 0.5rem;
+}
+
+.appointment-info > p {
+  font: var(--font-paragraph-sm);
+  color: var(--content-secondary);
+}
+
+.appointment-info > p:nth-of-type(1), 
+.appointment-info > p:nth-of-type(2) {
+  font: var(--font-label-sm);
+  color: var(--content-primary);
+}
 
 @media (width > 768px) {
   #appointments > header {

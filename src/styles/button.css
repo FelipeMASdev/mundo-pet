@@ -27,10 +27,21 @@ button:hover, button:focus {
 
   width: 2.5rem;
   height: 2.5rem;
-
+  cursor: pointer;
 }
 
 .close-button:hover, .close-button:focus {
+  filter: brightness(1.4);
+  outline: none;
+}
+
+.cancel-button{
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
+}
+
+.cancel-button:hover, .cancel-button:focus {
   filter: brightness(1.4);
   outline: none;
 }
