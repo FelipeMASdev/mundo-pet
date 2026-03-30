@@ -1,18 +1,31 @@
 import dayjs from 'dayjs';
 import {addAppointment} from '../../services/add-apointment.js';
+import { toggleAppointmentForm } from '../appointment-form/toggle-appointment-form.js';
+import { showAppointments } from '../appointments/show-appointments.js';
 
-document.querySelector('.form-submit').addEventListener('click', async (event) => {
+document.querySelector('#appointment-form').addEventListener('submit', async (event) => {
   event.preventDefault();
 
-  const pet = document.querySelector('#pet').value;
-  const tutor = document.querySelector('#tutor').value;
-  const telephone = document.querySelector('#telephone').value;
-  const service = document.querySelector('#service option:checked').textContent;
-  const date = document.querySelector('#date').value;
-  const time = document.querySelector('#time').value;
+  const pet = document.querySelector('#pet');
+  const tutor = document.querySelector('#tutor');
+  const telephone = document.querySelector('#telephone');
+  const service = document.querySelector('#service');
+  const date = document.querySelector('#date');
+  const time = document.querySelector('#time');
+  const selectedService = service.options[service.selectedIndex];
 
-  const when = dayjs(`${date}T${time}`).format('YYYY-MM-DDTHH:mm:ss');
+  const when = dayjs(`${date.value}T${time.value}`).format('YYYY-MM-DDTHH:mm:ss');
 
-  await addAppointment({ id: Date.now(), pet, tutor, telephone, when, service });
+  await addAppointment({ id: Date.now(), pet: pet.value, tutor: tutor.value, telephone: telephone.value, when, service: selectedService.textContent });
+
+  pet.value = '';
+  tutor.value = '';
+  telephone.value = '';
+  service.selectedIndex = 0;
+
+  const selectDateInput = document.getElementById("selected-date");
+
+  toggleAppointmentForm();
+  showAppointments({ date: selectDateInput.value });
 
 });
