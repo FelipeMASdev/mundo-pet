@@ -1,5 +1,6 @@
 import dayjs from 'dayjs';
 import { getAppointments } from '../../services/get-appointments.js';
+import {alignAppointmentInfo} from './align-appontment-info.js';
 
 const periodMorning = document.querySelector('.appointment-list.period-morning');
 const periodAfternoon = document.querySelector('.appointment-list.period-afternoon');
@@ -7,7 +8,6 @@ const periodNight = document.querySelector('.appointment-list.period-night');
 
 export async function showAppointments({ date }) {
  
-  
   //clering previously rendered appointments to avoid duplicates
   clearRenderedAppointments();
 
@@ -27,6 +27,9 @@ export async function showAppointments({ date }) {
   scheduleAfternoon.forEach((schedule) => renderAppointment(schedule, periodAfternoon));
   scheduleNight.forEach((schedule) => renderAppointment(schedule, periodNight));
 
+  // calling function to align appointment info in the appointment item
+  alignAppointmentInfo();
+
 }
 
 function renderAppointment(schedule, appointmentList) {
@@ -37,10 +40,14 @@ function renderAppointment(schedule, appointmentList) {
   appointmentItem.innerHTML = `
     <div class="appointment-info">
       <p class="appointment-time">${dayjs(schedule.when).format('HH:mm')}</p>
-      <p class="appointment-pet">${schedule.pet}</p>
-      <p class="appointment-tutor">${schedule.tutor}</p>
-      <p class="appointment-telephone">${schedule.telephone}</p>
-      <p class="appointment-service">${schedule.service}</p>
+      <div class="info-wrapper">
+        <div class="client-wrapper">
+          <p class="appointment-pet">${schedule.pet}/</p>
+          <p class="appointment-tutor">${schedule.tutor}</p>
+        </div>
+        <p class="appointment-telephone">${schedule.telephone}</p>
+        <p class="appointment-service">${schedule.service}</p>
+      </div>
     </div>
     <img class="cancel-button" src="assets/cancel.svg" alt="cancelar">
   `;

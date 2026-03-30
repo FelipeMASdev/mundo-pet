@@ -95,18 +95,37 @@
 .appointment-info {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
-  column-gap: 4rem;
-  row-gap: 0.5rem;
+  
+  width: 100%;
+  column-gap: 1.25rem
 }
 
-.appointment-info > p {
+.info-wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: space-between;
+  gap: 0.25rem;
+}
+
+.info-wrapper p{
+  min-width: max-content;
+}
+
+.client-wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 0.25rem;
+}
+
+.appointment-info  p {
   font: var(--font-paragraph-sm);
   color: var(--content-secondary);
 }
 
-.appointment-info > p:nth-of-type(1), 
-.appointment-info > p:nth-of-type(2) {
+.appointment-info  .appointment-time, 
+.appointment-info  .appointment-pet {
   font: var(--font-label-sm);
   color: var(--content-primary);
 }
