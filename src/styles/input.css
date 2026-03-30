@@ -10,6 +10,14 @@
   background-color: var(--background-primary);
 }
 
+.input:hover {
+  border-color: var(--border-secondary);
+}
+
+.input:has(:focus) {
+  border-color: var(--border-brand);
+}
+
 input, select{
   border: none;
   outline: none;

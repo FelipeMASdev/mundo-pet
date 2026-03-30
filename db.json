@@ -103,6 +103,14 @@
       "telephone": "(99) 9 9999-9999",
       "service": "Corte de Unhas",
       "when": "2026-03-30T13:00:00"
+    },
+    {
+      "id": "lT--8D1Nows",
+      "pet": "Shiro",
+      "tutor": "Felipe",
+      "telephone": "(99) 9 9999-9999",
+      "service": "Corte de Unhas",
+      "when": "2026-03-30T18:30:00"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

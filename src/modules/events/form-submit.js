@@ -2,8 +2,9 @@ import dayjs from 'dayjs';
 import {addAppointment} from '../../services/add-apointment.js';
 import { toggleAppointmentForm } from '../appointment-form/toggle-appointment-form.js';
 import { showAppointments } from '../appointments/show-appointments.js';
+import * as DOM from '../../utils/dom-elements.js';
 
-document.querySelector('#appointment-form').addEventListener('submit', async (event) => {
+DOM.appointmentForm.addEventListener('submit', async (event) => {
   event.preventDefault();
 
   const pet = document.querySelector('#pet');
@@ -29,3 +30,12 @@ document.querySelector('#appointment-form').addEventListener('submit', async (ev
   showAppointments({ date: selectDateInput.value });
 
 });
+
+DOM.appointmentForm.addEventListener('invalid', (event) => {
+  const firstInvalidField = DOM.appointmentForm.querySelector(':invalid');
+
+  if (firstInvalidField && event.target === firstInvalidField) {
+    console.log('Tentativa de envio com campos obrigatorios vazios:', firstInvalidField);
+    firstInvalidField.focus();
+  }
+}, true);

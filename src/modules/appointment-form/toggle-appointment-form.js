@@ -5,6 +5,7 @@ const blurFilter = document.querySelector('.blurFilter');
 
 const newAppointmentButton = document.querySelector('.new-appointment-button');
 const selectDateInput = document.querySelector('#selected-date');
+const tutorInput = document.querySelector('#tutor');
 
 export function toggleAppointmentForm() {
   formToggle = !formToggle;
@@ -14,6 +15,7 @@ export function toggleAppointmentForm() {
     
     newAppointmentButton.setAttribute('disabled', 'true');
     selectDateInput.setAttribute('disabled', 'true');
+    tutorInput.focus();
   } else {
     appointmentForm.classList.add('disabled');
     blurFilter.classList.add('disabled');
