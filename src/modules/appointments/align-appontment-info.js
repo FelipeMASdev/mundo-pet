@@ -8,16 +8,11 @@ export function alignAppointmentInfo() {
   const infoCategories = [appointmentClients, appointmentTutors, appointmentServices];
 
   infoCategories.forEach(category => {
-
-    console.log('alinhando categoria:', category);
-
     let maxItemWidth = 0;
 
     category.forEach(item => {
       if (item.offsetWidth > maxItemWidth) {
-        console.log(item)
         maxItemWidth = item.offsetWidth;
-        console.log('nova largura máxima:', maxItemWidth);
       }
     });
 

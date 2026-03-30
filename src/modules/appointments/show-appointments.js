@@ -1,13 +1,14 @@
 import dayjs from 'dayjs';
 import { getAppointments } from '../../services/get-appointments.js';
 import {alignAppointmentInfo} from './align-appontment-info.js';
+import {initializeCancelButtons} from '../events/cancel-button.js';
 
 const periodMorning = document.querySelector('.appointment-list.period-morning');
 const periodAfternoon = document.querySelector('.appointment-list.period-afternoon');
 const periodNight = document.querySelector('.appointment-list.period-night');
 
 export async function showAppointments({ date }) {
- 
+  console.log('showAppointments function called with date:', date);
   //clering previously rendered appointments to avoid duplicates
   clearRenderedAppointments();
 
@@ -29,7 +30,8 @@ export async function showAppointments({ date }) {
 
   // calling function to align appointment info in the appointment item
   alignAppointmentInfo();
-
+  // calling function to initialize cancel buttons
+  initializeCancelButtons();
 }
 
 function renderAppointment(schedule, appointmentList) {
