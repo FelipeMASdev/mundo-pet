@@ -44,7 +44,7 @@ function validateDate(date) {
   const dayOfWeek = dayjs(date).day();
   if (dayOfWeek === 0) {
     dateInput.value = today;
-    alert("Não abrimos aos domingos. Por favor, escolha outra data.");
+    console.log("Não abrimos aos domingos. Por favor, escolha outra data.");
   } else {
     clearOpeningHours(hourInput);
     addOpeningHours(hourInput);

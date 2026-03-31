@@ -11,7 +11,6 @@ export async function addAppointment({ id, pet, tutor, telephone, service, when 
     });
     console.log('Agendamento realizado com sucesso!');
   } catch (err) {
-    console.log(err);
-    console.log('Não foi possível agendar. Tente novamente mais tarde.');
+    console.log(err, 'Não foi possível agendar. Tente novamente mais tarde.');
   }
 }

@@ -1,6 +1,5 @@
 // css imports
 import './styles/styles.css';
-import './styles/utility.css';
 import './styles/appointments.css';
 import './styles/appointment-form.css';
 
@@ -8,6 +7,9 @@ import './styles/logo.css';
 import './styles/button.css';
 import './styles/input.css';
 import './styles/warning.css';
+import './styles/confirm.css';
+
+import './styles/utility.css';
 
 // lib imports
 import './libs/dayjs';

@@ -8,7 +8,6 @@ export async function deleteAppointment({ id }) {
     console.log('Agendamento cancelado com sucesso!');
 
   } catch (err) {
-    console.log(err);
-    console.log('Não foi possível cancelar o agendamento. Tente novamente mais tarde.');
+    console.log(err, 'Não foi possível cancelar o agendamento. Tente novamente mais tarde.');
   }
 }

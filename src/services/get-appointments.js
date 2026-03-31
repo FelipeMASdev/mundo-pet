@@ -13,7 +13,6 @@ export async function getAppointments({ date }) {
     return schedule;
 
   } catch (err) {
-    alert('Não foi possível buscar os agendamentos para o dia selecionado.');
-    console.log(err);
+    console.log(err, 'Não foi possível buscar os agendamentos para o dia selecionado.');
   }
 }

@@ -11,6 +11,7 @@ button {
   background-color: var(--background-brand);
   color: var(--content-dark);
   text-transform: uppercase;
+  font: var(--font-label-lg);
 
   border: none;
 }
