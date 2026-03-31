@@ -19,6 +19,5 @@ newAppointmentButton.addEventListener('click', () => {
   } else {
     dateInput.value = today.format('YYYY-MM-DD');
   }
-
   validateHour();
 });

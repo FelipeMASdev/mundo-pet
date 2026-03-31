@@ -8,7 +8,6 @@ const periodAfternoon = document.querySelector('.appointment-list.period-afterno
 const periodNight = document.querySelector('.appointment-list.period-night');
 
 export async function showAppointments({ date }) {
-  console.log('showAppointments function called with date:', date);
   //clering previously rendered appointments to avoid duplicates
   clearRenderedAppointments();
 

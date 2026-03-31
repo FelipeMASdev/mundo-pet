@@ -1,6 +1,7 @@
 import dayjs from "dayjs";
 import { getAppointments } from '../../services/get-appointments.js';
 import { addOpeningHours, clearOpeningHours} from '../appointment-form/set-opening-hours.js';
+import { createWarning } from '../warnings/create-warning.js';
 
 const form = document.querySelector('#appointment-add');
 
@@ -10,7 +11,6 @@ const hourInput = form.querySelector('select[name="time"]');
 
 const today = dayjs(new Date()).format('YYYY-MM-DD');
 dateInput.min = today;
-validateHour();
 
 async function getAppointmentData(){
   const data = await getAppointments({ date: dateInput.value });
@@ -94,5 +94,13 @@ export async function validateHour() {
       hourOption.remove();
     }
   });
+
+  if(hourInput.options.length === 0 && dateInput.value){
+    const warning = createWarning(
+      'Não há horários disponíveis para esta data. Por favor, escolha outra data.', 
+      hourInput.closest('.when-wrapper')
+    );
+    warning.setAttribute('data-id', 'no-hours-avaible');
+  }
 
 }

@@ -1,3 +1,7 @@
+:root{
+  --when-wrapper-gap: 1rem;
+}
+
 #appointment-add {
   position: absolute;
   left: 50%;
@@ -42,7 +46,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 1rem;
+  gap: var(--when-wrapper-gap);
   width: 100%;
 }
 
@@ -54,5 +58,10 @@ label {
 @media (width > 768px) {
   .when-wrapper {
     flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  #appointment-add .when-wrapper .input-wrapper{
+    width:calc(50% - (var(--when-wrapper-gap)/2));
   }
 }

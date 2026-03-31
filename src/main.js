@@ -7,6 +7,7 @@ import './styles/appointment-form.css';
 import './styles/logo.css';
 import './styles/button.css';
 import './styles/input.css';
+import './styles/warning.css';
 
 // lib imports
 import './libs/dayjs';

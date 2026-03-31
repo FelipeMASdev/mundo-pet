@@ -1,3 +1,6 @@
+import {removeAllWarnings} from '../warnings/remove-all-warnings.js';
+import {resetInputFields} from '../appointment-form/reset-input-fields.js';
+
 let formToggle = false;
 
 const appointmentForm = document.querySelector('#appointment-add');
@@ -22,5 +25,9 @@ export function toggleAppointmentForm() {
 
     newAppointmentButton.removeAttribute('disabled');
     selectDateInput.removeAttribute('disabled');
+
+    removeAllWarnings();
+    resetInputFields();
+
   }
 }
