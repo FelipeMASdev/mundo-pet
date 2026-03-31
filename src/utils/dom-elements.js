@@ -8,9 +8,11 @@ export const telephone = document.querySelector('#telephone');
 export const service = document.querySelector('#service');
 export const date = document.querySelector('#date');
 export const time = document.querySelector('#time');
+export const submitButton = document.querySelector('.form-submit');
 
 //appointments list
 export const selectDateInput = document.getElementById("selected-date");
+export const newAppointmentButton = document.querySelector('.new-appointment-button');
 
 //others
 export const blurFilter = document.querySelector('.blurFilter');

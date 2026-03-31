@@ -6,7 +6,7 @@ import {toggleConfirm} from '../warnings/toggle-confirm.js';
 export async function cancelAppointment(appointmentItem) {
 
   //Toogling and waiting for confirmation
-  const confirmCard = toggleConfirm('Tem certeza que deseja cancelar este agendamento?');
+  toggleConfirm('Tem certeza que deseja cancelar este agendamento?');
   let isConfirmed = await confirmCancelAppointment();
 
   if (!isConfirmed) {
