@@ -7,6 +7,10 @@
 
 Aplicação web para gerenciamento de agendamentos de serviços de pet shop por data e horário.
 
+## Preview
+
+![Preview do projeto](./src/assets/preview.png)
+
 ## Sobre o projeto
 
 O Mundo Pet permite criar, visualizar e cancelar agendamentos de atendimento de um pet shop. A agenda é exibida por períodos do dia (manhã, tarde e noite), com atualização automática após cada ação.
