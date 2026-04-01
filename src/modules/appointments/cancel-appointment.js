@@ -2,6 +2,7 @@ import * as DOM from '../../utils/dom-elements.js';
 import {showAppointments} from './show-appointments.js';
 import {deleteAppointment} from '../../services/delete-apointment.js';
 import {toggleConfirm} from '../warnings/toggle-confirm.js';
+import {createWarning} from '../warnings/create-warning.js';
 
 export async function cancelAppointment(appointmentItem) {
 
@@ -15,8 +16,15 @@ export async function cancelAppointment(appointmentItem) {
 
   // deleting appointment from server
   const appointmentId = appointmentItem.getAttribute('data-id');
-  console.log('id do agendamento a ser cancelado:', appointmentId);
-  await deleteAppointment({ id: appointmentId });
+  const appointmentTime = appointmentItem.querySelector('.appointment-time').textContent;
+  let response = await deleteAppointment({ id: appointmentId });
+
+  if (response === 'error') {
+    createWarning('Não foi possível cancelar o agendamento. Tente novamente mais tarde.', DOM.appointmentsHeaderWrapper, 'error', true);
+    return;
+  } else if (response === 'sucess') {
+    createWarning(`Agendamento de ${appointmentTime} cancelado com sucesso!`, DOM.appointmentsHeaderWrapper, 'sucess', true);
+  }
 
   //reloading appointments after canceling an appointment
   showAppointments({ date: DOM.selectDateInput.value });

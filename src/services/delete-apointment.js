@@ -5,9 +5,10 @@ export async function deleteAppointment({ id }) {
     await fetch(`${apiConfig.baseUrl}/appointments/${id}`, {
       method: 'DELETE',
     });
-    console.log('Agendamento cancelado com sucesso!');
+    return 'sucess';
 
   } catch (err) {
-    console.log(err, 'Não foi possível cancelar o agendamento. Tente novamente mais tarde.');
+    console.error(err, 'Não foi possível cancelar o agendamento. Tente novamente mais tarde.');
+    return 'error';
   }
 }

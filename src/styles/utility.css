@@ -12,3 +12,7 @@
   backdrop-filter: blur(8px);
   z-index: 1;
 }
+
+.appointment-item.in-focus {
+  border-bottom: 1px solid var(--border-brand);
+}

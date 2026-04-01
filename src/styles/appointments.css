@@ -12,7 +12,13 @@
   margin-inline: auto;
 }
 
-#appointments > header {
+#appointments .header-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+#appointments > .header-wrapper > header {
   display: flex;
   align-items: flex-start;
   gap: 1rem;
@@ -20,18 +26,18 @@
   width: 100%;
 }
 
-#appointments header .title {
+#appointments > .header-wrapper > header .title {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
 }
 
-#appointments header h1 {
+#appointments > .header-wrapper > header h1 {
   font: var(--font-title);
   color: var(--content-primary);
 }
 
-#appointments header p {
+#appointments > .header-wrapper > header p {
   font: var(--font-paragraph-md);
   color: var(--content-secondary);
 }
@@ -86,6 +92,7 @@
   flex-direction: row;
   justify-content: space-between;
   padding-block: 0.25rem;
+  margin-block: 0.5rem;
   margin-left: 1.5rem;
   margin-right: 1.5rem;
   align-items: center;
@@ -131,7 +138,7 @@
 }
 
 @media (width > 768px) {
-  #appointments > header {
+  #appointments > .header-wrapper > header {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;

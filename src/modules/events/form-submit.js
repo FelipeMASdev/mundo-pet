@@ -14,16 +14,37 @@ DOM.appointmentForm.addEventListener('submit', async (event) => {
   const when = dayjs(`${DOM.date.value}T${DOM.time.value}`).format('YYYY-MM-DDTHH:mm:ss');
 
   //calling function to create the appointment
-  await addAppointment({ 
+  let response = await addAppointment({ 
     id: Date.now(), pet: DOM.pet.value, tutor: DOM.tutor.value, telephone: DOM.telephone.value, when, service: selectedService.textContent 
   });
-
+  
   //resetting form fields
   resetInputFields();
 
   //hiding form and refreshing appointments list
   toggleAppointmentForm();
   showAppointments({ date: DOM.selectDateInput.value });
+
+  //working on
+  if (response.status === 'error') {
+    createWarning('Não foi possível realizar o agendamento. Tente novamente mais tarde.', DOM.appointmentsHeaderWrapper, 'error', true);
+  } else if (response.status === 'sucess') {
+    createWarning(`Agendamento realizado com sucesso!`, DOM.appointmentsHeaderWrapper, 'sucess', true);
+    const id = response.response.id;
+    
+    //delaying focus on the new appointment to ensure it is rendered before trying to select it
+    setTimeout(() => {
+      const appointmentElement = document.querySelector(`[data-id="${id}"]`);
+      if (appointmentElement) {
+        appointmentElement.classList.add('in-focus');
+        appointmentElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+        setTimeout(() => {
+          appointmentElement.classList.remove('in-focus');
+        }, 3000);
+      }
+    }, 300);
+  }
 });
 
 DOM.appointmentForm.addEventListener('invalid', (event) => {
@@ -33,7 +54,10 @@ DOM.appointmentForm.addEventListener('invalid', (event) => {
 
   //if the invalid event was triggered by the first invalid field, focus on it
   if (firstInvalidField && event.target === firstInvalidField) {
-    firstInvalidField.focus();
+    if(firstInvalidField.id !== 'time') {
+      firstInvalidField.focus();
+    }
+
     
     const parent = firstInvalidField.closest('.input-wrapper');
 

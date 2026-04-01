@@ -1,3 +1,4 @@
+import * as DOM from '../../utils/dom-elements.js';
 import dayjs from "dayjs";
 import { getAppointments } from '../../services/get-appointments.js';
 import { addOpeningHours, clearOpeningHours} from '../appointment-form/set-opening-hours.js';
@@ -43,8 +44,16 @@ dateInput.addEventListener("input", (event) => {
 function validateDate(date) {
   const dayOfWeek = dayjs(date).day();
   if (dayOfWeek === 0) {
-    dateInput.value = today;
-    console.log("Não abrimos aos domingos. Por favor, escolha outra data.");
+    //currently working on
+    clearOpeningHours(hourInput);
+
+    const warningParent = dateInput.closest('.when-wrapper');
+    warningParent.querySelector('.warning')?.remove();
+    const warning = createWarning('Não é possível agendar para domingo. Por favor, escolha outra data.', warningParent, 'closedDay');
+    warning.setAttribute('data-id', 'closedDay');
+    setTimeout(() => {
+      DOM.date.focus();
+    }, 50);
   } else {
     clearOpeningHours(hourInput);
     addOpeningHours(hourInput);
@@ -96,11 +105,13 @@ export async function validateHour() {
   });
 
   if(hourInput.options.length === 0 && dateInput.value){
-    const warning = createWarning(
+    const warning = await createWarning(
       'Não há horários disponíveis para esta data. Por favor, escolha outra data.', 
       hourInput.closest('.when-wrapper')
     );
+    setTimeout(() => {
+      DOM.date.focus();
+    }, 50);
     warning.setAttribute('data-id', 'no-hours-avaible');
   }
-
 }

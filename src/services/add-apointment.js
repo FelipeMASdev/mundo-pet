@@ -2,15 +2,16 @@ import {apiConfig} from '../services/api-config.js';
 
 export async function addAppointment({ id, pet, tutor, telephone, service, when }) {
   try {
-    await fetch(`${apiConfig.baseUrl}/appointments`,{
+    const response = await fetch(`${apiConfig.baseUrl}/appointments`,{
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({ id, pet, tutor, telephone, service, when }),
     });
-    console.log('Agendamento realizado com sucesso!');
+    return {'status': 'sucess', response: await response.json()};
   } catch (err) {
-    console.log(err, 'Não foi possível agendar. Tente novamente mais tarde.');
+    console.error(err, 'Não foi possível agendar. Tente novamente mais tarde.');
+    return {'status': 'error'};
   }
 }

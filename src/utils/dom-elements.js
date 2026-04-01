@@ -6,11 +6,13 @@ export const pet = document.querySelector('#pet');
 export const tutor = document.querySelector('#tutor');
 export const telephone = document.querySelector('#telephone');
 export const service = document.querySelector('#service');
+export const whenWrapper = document.querySelector('.when-wrapper');
 export const date = document.querySelector('#date');
 export const time = document.querySelector('#time');
 export const submitButton = document.querySelector('.form-submit');
 
 //appointments list
+export const appointmentsHeaderWrapper = document.querySelector('.header-wrapper');
 export const selectDateInput = document.getElementById("selected-date");
 export const newAppointmentButton = document.querySelector('.new-appointment-button');
 

@@ -7,6 +7,10 @@
   margin-top: 0.5rem;
 }
 
+.warning.sucess-feedback {
+  background-color: var(--accent-success);
+}
+
 .warning-icon {
 
   flex-shrink: 0;
@@ -16,7 +20,7 @@
   display: flex;
   align-content: center;
   justify-content: center;
-  background: var(--accent-warning);
+  background: transparent;
   border: 2px solid white;
   color: white;
   line-height: 1rem;

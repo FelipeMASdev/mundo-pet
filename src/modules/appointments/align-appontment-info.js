@@ -2,10 +2,10 @@
 
 export function alignAppointmentInfo() {
   const appointmentClients = document.querySelectorAll('.client-wrapper');
-  const appointmentTutors = document.querySelectorAll('.appointment-telephone');
+  const appointmentTelephone = document.querySelectorAll('.appointment-telephone');
   const appointmentServices = document.querySelectorAll('.appointment-service');
 
-  const infoCategories = [appointmentClients, appointmentTutors, appointmentServices];
+  const infoCategories = [appointmentClients, appointmentTelephone, appointmentServices];
 
   infoCategories.forEach(category => {
     let maxItemWidth = 0;
